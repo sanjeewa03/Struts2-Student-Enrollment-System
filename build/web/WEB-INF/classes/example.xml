@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="login" namespace="/" extends="struts-default">
+        <action name="Login" class="auth.Login">
+            <result name="success,student">/example/logged.jsp</result>
+            <result name="success,teacher">/example/loggedTeacher.jsp</result>
+            <result name="input">/example/HelloWorld.jsp</result>
+        </action>
+    </package>
+    <package name="subjects" namespace="/" extends="struts-default">
+        <action name="ViewSubjects" class="subjects.ViewSubjects">
+            <result name="success">/courses/editCourses.jsp</result>
+        </action>
+    </package>
+</struts>
+

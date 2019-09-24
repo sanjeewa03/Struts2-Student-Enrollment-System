@@ -6,10 +6,24 @@
 
 <struts>
     <package name="login" namespace="/" extends="struts-default">
+        <interceptors>
+            <interceptor name = "authorization" class = "auth.Authorization" />
+        </interceptors>
         <action name="Login" class="auth.Login">
+<!--            
+            <interceptor-ref name = "params"/>
+            <interceptor-ref name = "authorization" />-->
             <result name="success,student">/example/logged.jsp</result>
-            <result name="success,teacher">/example/loggedTeacher.jsp</result>
+            <result name="success,teacher" type="redirect">home.action</result>
             <result name="input">/example/HelloWorld.jsp</result>
+        </action>
+        
+        <action name="home" class="auth.Login" method="home" >
+            
+            <interceptor-ref name = "params"/>
+            <interceptor-ref name = "authorization" />
+            <result name="success">/example/loggedTeacher.jsp</result>
+            
         </action>
     </package>
     <package name="subjects" namespace="/" extends="struts-default">

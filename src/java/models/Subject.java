@@ -12,7 +12,7 @@ package models;
 public class Subject {
     private String sub_code;
     private String sub_name;
-    private String credit;
+    private int credit;
 
     /**
      * @return the sub_code
@@ -45,14 +45,14 @@ public class Subject {
     /**
      * @return the credit
      */
-    public String getCredit() {
+    public int getCredit() {
         return credit;
     }
 
     /**
      * @param credit the credit to set
      */
-    public void setCredit(String credit) {
+    public void setCredit(int credit) {
         this.credit = credit;
     }
 }

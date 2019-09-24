@@ -14,16 +14,19 @@
         <title>JSP Page</title>
     </head>
     <body>
-    <tr>
-        <th>Subject Code</th>
-        <th>Subject Name</th>
-        <th>Credit</th>
-    </tr>
-        <s:iterator value="subjects" >
+        <table style="width: 50%">
             <tr>
-                <td style="background: grey"><s:property value="subject"/></td>
-                <td style="background: grey"><s:property value="sub_name"/></td>
-                <td style="background: grey"><s:property value="credit"/></td>
-        </s:iterator>
+                <th>Subject Code</th>
+                <th>Subject Name</th>
+                <th>Credit</th>
+            </tr>
+            <s:iterator value="subjects" >
+                <tr>
+                    <td style="background: grey"><s:property value="sub_code"/></td>
+                    <td style="background: grey"><s:property value="sub_name"/></td>
+                    <td style="background: grey"><s:property value="credit"/></td>
+                </tr>
+            </s:iterator>
+        </table>
     </body>
 </html>
